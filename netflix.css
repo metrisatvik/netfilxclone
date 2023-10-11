@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* PADDING is used to create space around an element's content, inside of any defined borders. */
+
+/* CSS has properties for specifying the padding for each side of an element:
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+All the padding properties can have the following values:
+length - specifies a padding in px, pt, cm, etc.
+% - specifies a padding in % of the width of the containing element
+inherit - specifies that the padding should be inherited from the parent element */
+
+/* Note: Negative values are not allowed. */
+
+/* If the padding property has four values:
+padding: 25px 50px 75px 100px;
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px */
+
+/* If the padding property has three values:
+padding: 25px 50px 75px;
+top padding is 25px
+right and left paddings are 50px
+bottom padding is 75px */
+
+/* If the padding property has two values:
+padding: 25px 50px;
+top and bottom paddings are 25px
+right and left paddings are 50px */
+
+/* If the padding property has one value:
+padding: 25px;
+all four paddings are 25px */
+
+body {
+    background: #000;
+    color: #fff;
+}
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(netflix1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    position: relative;
+    /* learn about position in css here: https://www.w3schools.com/css/css_positioning.asp */
+}
+
+/* Refer this page for more: https://tutorial.techaltum.com/css-flexbox.html#:~:text=Display%20flex%20is%20the%20property,children%20automatically%20enable%20flex%20content. */
+
+
+/* FLEX BASED LAYOUTS
+The flex box is CSS Layout Design build using display:flex property. Flexbox is used to build one-dimensional layout in css. One dimensional means flexbox can build layout in one dimension ( either row or column ) at one time. For two-dimensional layouts, use CSS Grids that can handle both row and column.
+Display flex or inline-flex is used to build flexbox. Flex can build one dimension layout which is better than float based layout.
+
+FLEXBOX ADVANTAGES
+Better layout designs
+Advantage of flexible layouts.
+Supports IE 10 and above browsers.
+Auto height and width option available.
+Easy to change direction of flex columns. */
+
+/* FLEXBOX PROPERTIES */
+/* Flex is the value of css display . By using display flex in parent element, child elements automatically align like column or row with auto width and auto height. */
+/* Refer this image: https://tutorial.techaltum.com/images/css-flexbox.jpg */
+
+/* The flex CSS shorthand property is the combination of 
+flex-grow, 
+flex-shrink,
+and flex-basis properties. 
+It is used to set the length of flexible items. The flex property is much more responsive and mobile-friendly. */
+
+/* PROPEERTY VALUES:
+flex-grow Property: A number that specifies, how much items will grow relative to the rest of the flexible items.
+flex-shrink Property: A number that specifies, how much items will shrink relative to the rest of the flexible items.
+flex-basis Property: It sets the length of items. Legal values of flex-basis are: auto, inherit, or a number followed by %, em, px, or any other length unit.
+flex-wrap Property: The CSS flex-wrap property is used to specify whether flex items are forced into a single line or wrapped onto multiple lines. */
+
+/* The flex property can be specified with the help of 1, 2 or 3 values:
+
+One-value syntax: the value should contain one of following:
+number: If it is represented as flex: <number> 1 0; then the value of flex-shrink, flex-basis will supposed to be 1 & 0 respectively.
+It can be specified by one of the keyword as auto, none or initial.
+Two-value syntax: It must contains the following values:
+The first value should be the number that will represent the flex-grow.
+The second value should contain one of the following:
+number: If it is number then it will represented as flex-shrink.
+a width with the valid value will represents the flex-basis.
+Three-value syntax: The values should be in the same order:
+first number represents the flex-grow.
+second number represents the flex-shrink.
+a width with the valid value will represents the flex-basis. */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.logo {
+    width: 150px;
+    cursor: pointer;
+}
+nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.language-btn{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 7px 10px;
+}
+.language-btn img{
+    width: 10px;
+    margin-left: 10px;
+}
+.header-content{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    /* The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements. */
+    /* learn more about transform property here: https://developer.mozilla.org/en-US/docs/Web/CSS/transform */
+
+    text-align: center;
+    margin-top: 100px;
+}
+.header-content h1{
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 650px;
+}
+.header-content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.email-signup {
+    background: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+    /* In CSS, overflow occurs when an element’s content does not fit entirely inside the element box. This can happen when an element has a specified height that’s too small for the content it contains. You can use the CSS overflow property to control what happens to the overflow. */
+    /* refer: https://blog.hubspot.com/website/css-overflow#:~:text=What%20is%20overflow%20in%20CSS,what%20happens%20to%20the%20overflow. */
+}
+.email-signup button{
+    background: #db0001;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 30px;
+}
+.email-signup input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+    /* background: transparent; */
+}
+
+/* ------------features------------ */
+
+.features{
+    padding: 50px 12%;
+    font-size: 22px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.text-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+.features h2{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* ------------faq------------- */
+
+.faq{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+}
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+.accordion{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+}
+.accordion li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+
+/* CSS transitions allows you to change property values smoothly, over a given duration. */
+/* learn more about transitions here: https://www.w3schools.com/css/css3_transitions.asp */
+
+input[type="radio"]{
+    display: none;
+}
+.accordion .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+/* The :checked pseudo-class in CSS selects elements when they are in the selected state. It is only associated with input (<input>) elements of type radio and checkbox . The :checked pseudo-class selector matches radio and checkbox input types when checked or toggled to an on state. If they are not selected or checked, there is no match.
+
+So when a checkbox is checked, and you are targeting the label immediately after it:
+CSS:
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}  */
+
+/* HTML: 
+<input type="checkbox" id="ossm" name="ossm"> 
+<label for="ossm">CSS is Awesome</label>  */
+
+/* The label text will turn from grey italic to red normal font. */
+
+/* to see demonstration: https://css-tricks.com/almanac/selectors/c/checked/#:~:text=The%20%3Achecked%20pseudo%2Dclass%20in,toggled%20to%20an%20on%20state. */
+
+
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+}
+.faq small{
+    font-size: 13px;
+}
+
+/* ---------footer----------- */
+
+.footer{
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
+}
+.footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.footer .col a{
+    display: block;
+    text-decoration: none;
+    /* refer for text-decoration:  */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration */
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.footer .row{
+    align-items: flex-start;
+    padding: 10px 0;
+}
+.footer .language-btn{
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.copyright-text{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* ------------media-queries-for-small-screen----------- */
+
+@media only screen and (max-width: 600px){
+    .logo{
+        width: 100px;
+    }
+    nav button{
+        padding: 5px 10px;
+    }
+    nav .language-btn{
+        padding: 4px 8px;
+    }
+    .header-content{
+        position: unset;
+        transform: none;
+        padding-top: 150px;
+    }
+    .header-content h1{
+        font-size: 30px;     
+    }
+    .email-signup button{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .text-col, .img-col{
+        flex-basis: 100%;
+    }
+    .features h2{
+        padding-top: 35px;
+        font-size: 25px;
+    }
+    .features p{
+        font-size: 15px;
+    }
+    .row:nth-child(2),.row:nth-child(4){
+        flex-direction: column-reverse;
+    }
+    .features .row{
+        padding: 10px 0;
+    }
+    .faq h2{
+        font-size: 20px;
+    }
+    .accordion .content{
+        font-size: 14px;
+    }
+    .accordion li label{
+        padding: 10px;
+        font-size: 14px;
+    }
+    label::after{
+        font-size: 22px;
+    }
+}
